@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>adom-media demo</title>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script>
+    window.Polymer = {
+      dom: 'shadow',
+      lazyRegister: 'true',
+      useNativeCSSProperties: 'true'
+    }
+  </script>
+
+  <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../bower_components/adom-demo/adom-demo.html">
+  <link rel="import" href="../adom-media.html">
+
+  <style is="custom-style" include="demo-pages-shared-styles">
+    /*Common styles*/
+    
+    .component-info {
+      padding: 1em;
+    }
+    
+    .adom-media {
+      color: #3e3e3e;
+    }
+    
+    .component-description {
+      color: #999;
+    }
+    
+    demo-snippet {
+      --demo-snippet-demo: {
+        display: block;
+      };
+    }
+  </style>
+</head>
+
+<body>
+  <adom-demo id="demo" option-selected="0">
+    <div>
+      <div class="component-info">
+        <h2 class="adom-media">Image media</h2>
+        <div class="component-description">
+          <p>Image component with width and height, if you want show an image, the attribute <b>img-src</b> is required.</p>
+        </div>
+      </div>
+      <demo-snippet>
+        <template>
+          <adom-media img-src="http://lorempixel.com/600/400/" width="600" height="400" fade-in></adom-media>
+        </template>
+      </demo-snippet>
+    </div>
+    <div>
+      <div class="component-info">
+        <h2 class="adom-media">Youtube media</h2>
+        <div class="component-description">
+          <p>You can use an url video from Youtube. Use the attribute <b>video-src</b>.</p>
+        </div>
+      </div>
+      <demo-snippet>
+        <template>
+          <adom-media video-src="https://www.youtube.com/watch?v=2c3tnoWdiBc" width="640" height="360"></adom-media>
+        </template>
+      </demo-snippet>
+    </div>
+    <div>
+      <div class="component-info">
+        <h2 class="adom-media">Vimeo media</h2>
+        <div class="component-description">
+          <p>You can use an url video from Vimeo. Use the attribute <b>video-src</b></p>
+        </div>
+      </div>
+      <demo-snippet>
+        <template>
+          <adom-media video-src="https://vimeo.com/206588966" width="640" height="360"></adom-media>
+        </template>
+      </demo-snippet>
+    </div>
+    <div>
+      <div class="component-info">
+        <h2 class="adom-media">Responsive media</h2>
+        <div class="component-description">
+          <p>it's posibble make a video or image responsive use the attribute responsive.</p>
+        </div>
+      </div>
+      <demo-snippet>
+        <template>
+          <adom-media video-src="https://vimeo.com/206588966" responsive></adom-media>
+          <adom-media img-src="http://lorempixel.com/700/400/" height="400" responsive></adom-media>
+        </template>
+      </demo-snippet>
+    </div> 
+  </adom-demo>
+  <script>
+    var menu = [
+      { optionName: 'Image media' },
+      { optionName: 'Youtube media' },
+      { optionName: 'Vimeo media' },
+      { optionName: 'Responsive media' }
+    ];
+    var demo = document.getElementById('demo');
+    demo.optionsMenu = menu;
+  </script>
+</body>
+
+</html>

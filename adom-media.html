@@ -1,0 +1,21 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="adom-media-styles.html">
+
+<!--
+`adom-media`
+A component description
+
+@demo demo/index.html 
+-->
+
+<dom-module id="adom-media">
+  <style include="adom-media-styles adom-media-shared-styles"></style>
+  <template>
+    <div class="image-overlay" style$="background-image: url('[[imgSrc]]'); background-size: cover; background-position: center center; background-repeat: no-repeat; width:[[width]]px; height:[[height]]px">
+    </div>
+    <div class="video">
+      <iframe class="iframe" width="[[width]]" height="[[height]]" src$="[[videoSrc]]" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+    </div>
+  </template>
+  <script src="adom-media.js"></script>
+</dom-module>
