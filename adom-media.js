@@ -38,7 +38,6 @@
       responsive: {
         type: Boolean,
         refflectToAttribute: true,
-        observer: '_responsive'
       },
       fadeIn: {
         value: false
@@ -58,10 +57,10 @@
           image.hidden = true;
           video.hidden = true;
         }
+        this._responsive();
     },
     _fixVideo: function () {
       var regexp = /(http:\/\/|https:\/\/|)(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/;
-      console.log(this.videoSrc.match(regexp))
       if (regexp.test(this.videoSrc)) {
         // check if video is vimeo or youtube
         if(this.videoSrc.match(regexp)[3] === "vimeo.com") {
@@ -77,10 +76,10 @@
         var image = Polymer.dom(this.root).querySelector('.image-overlay');
         var iframe = Polymer.dom(this.root).querySelector('.iframe');
         if(this.imgSrc) {
-          image.style.width = '100%'
+          image.style.width = '100%';
         }
         if(this.videoSrc) {
-          iframe.width = '100%'
+          iframe.width = '100%';
         }
       }
     }
