@@ -37,10 +37,14 @@
        */
       responsive: {
         type: Boolean,
-        refflectToAttribute: true,
+        reflectToAttribute: true,
       },
       fadeIn: {
         value: false
+      },
+      circle: {
+        type: Boolean,
+        reflectToAttribute: true
       }
     },
     attached: function () {
@@ -49,6 +53,9 @@
 
         if (this.imgSrc) {
           video.hidden = true;
+        }
+        if (this.imgSrc && this.circle) {
+          image.style.borderRadius = this.width/2 + 'px';
         }
         if(this.videoSrc){
           image.hidden = true;
