@@ -1,7 +1,7 @@
 {
   "name": "adom-media",
   "version": "1.0.0",
-  "description": "A component description",
+  "description": "This component shows an image or video with dimensions. so it´s possible add content inside of image using slot",
   "main": "adom-media.html",
   "keywords": [],
   "ignore": [],
@@ -9,7 +9,7 @@
     "polymer": "Polymer/polymer#^1.6.0"
   },
   "devDependencies": {
-    "adom-demo": "https://github.com/ADominguezes/adom-demo.git#^0.0.2",
+    "adom-demo": "ADominguezes/adom-demo.git#^1.0.1",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "web-component-tester": "Polymer/web-component-tester#^4.0.0",
