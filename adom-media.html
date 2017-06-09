@@ -3,15 +3,72 @@
 
 <!--
 `adom-media`
-A component description
+This component shows an image or video with dimensions. so it´s possible add content inside of image using slot
 
-@demo demo/index.html 
+## Using an image
+
+use the attribute `img-src` for add an url image
+
+__example__
+
+```html
+<adom-media img-src="http://lorempixel.com/600/400/" width="600" height="400" fade-in></adom-media>
+```
+
+With the attributes `width` and `height` it's possible get dimensions to image.
+
+Use the attribute `fade-in` for add an opacity transition.
+
+## Using a video
+
+it's possible add a video using the attribute `video-src`. You can add a video from youtube, or from vimeo.
+
+__example__
+
+```html
+<adom-media video-src="https://vimeo.com/206588966" width="640" height="360"></adom-media>
+```
+
+For add an image or video responsive, add the attribute `responsive`, for this, it´s no neccessary add the attribute `width`
+
+__example__
+
+```html
+<adom-media video-src="https://vimeo.com/206588966" responsive></adom-media>
+```
+
+## Using slot
+
+Add your own content inside an image using the slot image-content
+
+__example__
+
+```html
+<adom-media img-src="http://lorempixel.com/600/400/" fade-in>
+  <div slot="image-content">
+    <h1>My own content</h1>
+  </div>
+</adom-media>
+```
+
+## Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property   | Description                        | Default   |
+------------------|------------------------------------|-----------|
+--adom-media      | empty mixin for :host adom-media   | {}        |
+
+
+@demo demo/index.html
 -->
 
 <dom-module id="adom-media">
   <style include="adom-media-styles adom-media-shared-styles"></style>
   <template>
     <div class="image-overlay" style$="background-image: url('[[imgSrc]]'); background-size: cover; background-position: center center; background-repeat: no-repeat; width:[[width]]px; height:[[height]]px">
+      <slot name="image-content">
+      </slot>
     </div>
     <div class="video">
       <iframe class="iframe" width="[[width]]" height="[[height]]" src$="[[videoSrc]]" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
