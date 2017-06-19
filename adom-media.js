@@ -9,7 +9,8 @@
        * Url image
        */
       imgSrc: {
-        type: String
+        type: String,
+        observer: '_responsive'
       },
       /**
        * Url video
@@ -37,7 +38,7 @@
        */
       responsive: {
         type: Boolean,
-        reflectToAttribute: true,
+        reflectToAttribute: true
       },
       fadeIn: {
         value: false
@@ -64,7 +65,6 @@
           image.hidden = true;
           video.hidden = true;
         }
-        this._responsive();
     },
     _fixVideo: function () {
       var regexp = /(http:\/\/|https:\/\/|)(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/;
